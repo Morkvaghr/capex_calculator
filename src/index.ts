@@ -8,7 +8,7 @@ const roles: { [key: string]: number } = {
     // Add other roles here
   };
 
-  // List of month names
+
 const monthNames = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
@@ -43,7 +43,7 @@ function getWeekdaysInMonth(year: number, month: number): number {
     return weekdays;
 }
 
-console.log(calculateTotal("Developer", 0, 2024,5))
+//console.log(calculateTotal("Developer", 0, 2024,5))
 
 
 
@@ -80,7 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add event listener to the submit button
     submitButton.addEventListener('click', () => {
         const selectedRole = selectElement.value;
-        const daysOff = parseInt(daysOffInput.value, 10);
+        // Ensure daysOff is a number and default to 0 if the value is null or empty
+        const daysOff = parseInt(daysOffInput.value ?? '0', 10) || 0;
         const month = parseInt(monthSelect.value, 10);
         const year = parseInt(yearInput.value, 10);
 
